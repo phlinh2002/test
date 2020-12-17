@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .box {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 25%;
+            width: 50%;
+            height: 50%;
+            background-color: rgb(193, 214, 248);
+        }
+
+        .box2 {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 25%;
+            width: 50%;
+            height: fit-content;
+            background-color: rgb(224, 231, 240);
+        }
+
+        #heading {
+            font-size: 50px;
+        }
+
+        #text {
+            margin-top: 20px;
+            font-size: 25px;
+        }
+
+        input {
+            display: inline-block;
+            width: 250px;
+            height:30px;
+
+        }
+
+        button {
+            width: 100px;
+            display: inline-block;
+            background-color: rgb(20, 20, 102);
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="heading">
+            Lucky Number
+        </div>
+    </div>
+    <div class="box2">
+        <div id="text">
+            Dự đoán con số của bạn nằm trong khoảng từ 1 - 10
+        </div>
+        <input type="number" id="so" placeholder="Nhập vào con số mà bạn dự đoán">
+
+        <button id="upperbutton">Quay số</button>
+    </div>
+
+
+    <script>
+        let a = Math.floor(Math.random() * 11);
+        console.log(a);
+        
+        let i = 0;
+        upperbutton.addEventListener("click", () => {
+            let so = $("#so").val();
+            console.log(so);
+            i++;
+            if (i>2){
+                alert("Xin lỗi bạn không phải người may mắn");
+                return
+            } 
+            if(so!=a) {
+                alert("Mời bạn nhập lại")
+            }else if (so == a){
+                alert("Chúc mừng bạn đã tìm ra con số bí mật");
+            } 
+
+
+            
+
+        })
+    </script>
+</body>
+
+</html>
